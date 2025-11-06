@@ -1,0 +1,27 @@
+{
+  "name": "saas-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SaaS Monorepo com Backend e Frontend",
+  "workspaces": [
+    "Backend",
+    "Frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=Backend & npm run dev --workspace=Frontend",
+    "dev:backend": "npm run dev --workspace=Backend",
+    "dev:frontend": "npm run dev --workspace=Frontend",
+    "build": "npm run build --workspace=Backend && npm run build --workspace=Frontend",
+    "build:backend": "npm run build --workspace=Backend",
+    "build:frontend": "npm run build --workspace=Frontend",
+    "install:all": "npm install && npm install --workspace=Backend && npm install --workspace=Frontend"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0"
+  }
+}
+
