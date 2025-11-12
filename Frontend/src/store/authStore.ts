@@ -88,7 +88,7 @@ export const useAuthStore = create<AuthState>((set) => ({
     zip_code?: string
   ) => {
     try {
-      const response = await axios.post(`${API_URL}/auth/register`, {
+      await axios.post(`${API_URL}/auth/register`, {
         email,
         password,
         name,
