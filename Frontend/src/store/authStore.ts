@@ -101,9 +101,6 @@ export const useAuthStore = create<AuthState>((set) => ({
         state,
         zip_code,
       });
-
-      // Após registro, fazer login automaticamente
-      await useAuthStore.getState().login(email, password);
     } catch (error: any) {
       set({ loading: false });
       throw new Error(error.response?.data?.error || 'Erro ao registrar');
