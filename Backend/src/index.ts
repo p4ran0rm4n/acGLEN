@@ -6,28 +6,7 @@ import dotenv from 'dotenv';
 import { createClient } from '@supabase/supabase-js';
 
 // Carregar variáveis de ambiente (da pasta Backend)
-import path from 'path';
-import fs from 'fs';
-
-// Resolver caminho do .env (procura na pasta Backend onde o comando é executado)
-const envPath = path.resolve(process.cwd(), '.env');
-
-// Verificar se o arquivo existe
-if (!fs.existsSync(envPath)) {
-  console.error('❌ Arquivo .env não encontrado em:', envPath);
-  throw new Error(`Arquivo .env não encontrado em: ${envPath}`);
-}
-
-// Carregar variáveis de ambiente
-const result = dotenv.config({ 
-  path: envPath,
-  encoding: 'utf8'
-});
-
-if (result.error) {
-  console.error('❌ Erro ao carregar .env:', result.error);
-  throw result.error;
-}
+dotenv.config();
 
 // Inicializar Supabase
 const supabaseUrl = process.env.SUPABASE_URL;
