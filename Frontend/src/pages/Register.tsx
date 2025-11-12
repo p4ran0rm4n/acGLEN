@@ -171,7 +171,7 @@ export default function Register() {
         formData.state || undefined,
         formData.zip_code || undefined
       );
-      navigate('/login');
+      navigate('/welcome');
     } catch (err: any) {
       setError(err.message || 'Erro ao registrar');
     } finally {
