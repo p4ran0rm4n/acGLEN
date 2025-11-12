@@ -5,7 +5,7 @@ import axios from 'axios';
 import { User, Mail, Phone, MapPin, CreditCard, Edit2, Save, X } from 'lucide-react';
 import { formatCPF, formatPhone, formatCEP } from '../utils/validators';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
 
 export default function Profile() {
   const { user, token } = useAuthStore();

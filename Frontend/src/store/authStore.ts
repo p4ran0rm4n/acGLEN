@@ -16,9 +16,11 @@ if (!supabaseUrl || !supabaseAnonKey) {
   console.error('  VITE_SUPABASE_ANON_KEY:', supabaseAnonKey ? 'DEFINIDO' : 'NÃO DEFINIDO');
 }
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = (supabaseUrl && supabaseAnonKey)
+  ? createClient(supabaseUrl, supabaseAnonKey)
+  : (undefined as unknown as ReturnType<typeof createClient>);
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
 
 interface User {
   id: string;
